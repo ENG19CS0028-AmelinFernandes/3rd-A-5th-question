@@ -112,3 +112,48 @@ if __name__ == '__main__':
     print(data1)
     print(data2)
     print(dup)
+
+5 (a) 
+The error here is that when k from data2 does not exist in data1, the (k,v) from data2 is not getting added to data1.
+Input:
+    3
+    1 2
+    2 2
+    8 7
+    
+    2
+    3 3 
+    2 9
+5 (b)
+if k in data1:
+    v1=data1[k]
+    if v1!=v2:
+        dupkeys[k]=[v1,v2]
+        del data1[k]
+    else:
+        data1[k] = v2
+    return dupKeys
+        
+5 (c) 
+Test case 1:
+4
+1 2
+3 3
+3 8
+4 9
+
+2
+3 3
+4 4
+Test case 2:
+4
+1 2
+2 2 
+3 3
+4 19
+
+2
+3 3
+4 19
+Test case 3:
+The test case written in 5a wwhich breaks the initial written code can be written
